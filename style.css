@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Cardo:wght@400;700&family=Lato:wght@300;400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+body {
+    background-color: #f9f1f1;
+}
+::-webkit-scrollbar {
+    background-color: #ccc;
+    width: 8px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #ff5757;
+}
+#header img {
+    max-width: 100%;
+    height: 100px;
+}
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 60px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+#navbar li a {
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1e57;
+    transition: 0.3s ease;
+}
+/* Add this CSS to style the dropdown */
+#navbar li .iocn-link {
+    position: relative;
+}
+
+#navbar li .arrow {
+    cursor: pointer;
+    transition: transform 0.3s ease; /* Add a smooth transition effect */
+  }
+  
+  #navbar li:hover .arrow {
+    transform: rotate(90deg); /* Rotate the icon 90 degrees on hover */
+    color: #ff5757;
+  }
+  
+
+#navbar li .sub-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.01);
+    z-index: 999;
+   width: 150px;
+}
+
+#navbar li:hover .sub-menu {
+    display: block;
+}
+
+#navbar li .sub-menu li {
+    padding: 10px;
+    text-align: center;
+
+}
+
+#navbar li .sub-menu li a {
+    color: #1a1e57;
+    text-decoration: none;
+    display: block;
+    transition: 0.3s ease;
+}
+
+#navbar li .sub-menu li a:hover {
+    color: #ff5757;
+}
+#navbar li a:hover,
+#navbar li a.active {
+    color: #ff5757;
+}
+#navbar li a.active::after,
+#navbar li a:hover::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background-color: #ff5757;
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+} 
+#hero {
+    position: relative;
+    overflow: hidden;
+    height: 90vh; /* Adjust the height as needed */
+    background-position: top 25% right 0 ;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 0 80px;
+}
+#hero h4 {
+    padding-bottom: 15px;
+    color:  rgba(255, 255, 153, 0.9);
+}
+#hero h1 {
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 800;
+    font-size: 46px;
+}
+#hero p {
+    margin: 10px;
+    color: rgba(255, 255, 153, 0.9);
+}
+#hero button {
+    color: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    background-color: #ff5757;
+    border: 1px solid #fff;
+    padding: 10px 18px;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.3s ease;
+}
+#hero button:hover {
+    background-color: #1a1e57;
+
+}
+
+.video-container,
+.image-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: none; /* Hide the image initially */
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Adjust the alpha value for transparency */
+}
+.section-p1 {
+    padding: 40px 80px;
+}
+#featured .content  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+#featured .content img {
+    max-width: 100%;
+    height: 230px;
+    margin: 40px;
+}
+#featured .timeline {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* The actual timeline (the vertical ruler) */
+  #featured .timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    background-color: white;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px;
+  }
+  
+  /* Container around content */
+  #featured .container {
+    padding: 10px 40px;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+  }
+  
+  /* The circles on the timeline */
+  #featured .container::after {
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: -17px;
+    background-color: white;
+    border: 4px solid #ff5757;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  /* Place the container to the left */
+  #featured .left {
+    left: -80px;
+  }
+  
+  /* Place the container to the right */
+  #featured .right {
+    left: 50%;
+  }
+  
+  /* Add arrows to the left container (pointing right) */
+  #featured .left::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    right: 30px;
+    border: medium solid white;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent white;
+  }
+  
+  /* Add arrows to the right container (pointing left) */
+  #featured .right::before {
+    content: " ";
+    height: 0;
+    position: absolute;
+    top: 22px;
+    width: 0;
+    z-index: 1;
+    left: 30px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+  
+  /* Fix the circle for containers on the right side */
+  #featured .right::after {
+    left: -16px;
+  }
+  
+  /* The actual content */
+  #featured .content {
+    padding: 20px 30px;
+    background-color: white;
+    position: relative;
+    border-radius: 6px;
+  }
+  #featured .content p {
+    line-height: 30px;
+    font-weight: 400;
+    color: #1a1e57;
+  }
+  #product1 {
+    background-color: #fff;
+    padding: 10px 20px;
+  }
+  #product1 .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  #product1 .content img {
+    max-width: 100%;
+    height: 80px;
+    padding: 10px;
+  }
+  #product1 .content .first {
+    height: 40px;
+  }
+  #product1 .content .second {
+    height: 120px;
+  }
+  #product1 .content .last {
+    height: 130px;
+  }
+  #newsletter {
+    display: flex;
+    height: 40vh;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    align-items: center;
+    background-image: url('Image/news.png');
+    background-repeat: no-repeat;
+    background-position: 50% 20%;
+    background-color: #ff5757;
+    padding: 0 80px;
+
+  }
+  #newsletter h4 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+  }
+  #newsletter .new {
+    background-color: #1a1e57;
+    padding: 40px;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.01);
+    border-radius: 4px;
+  }
+  #newsletter p {
+    color: rgba(255, 255, 153, 0.9);
+    font-size: 14px;
+    margin: 10px 0;
+  }
+  #newsletter .form {
+    display: flex;
+    width: 40%;
+  
+  }
+  #newsletter input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  #newsletter button {
+    background-color: #ff5757;
+    border: 1px solid #fff;
+    color: #fff;
+    white-space: nowrap;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+
+  }
+  footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;   
+    background-color: #fff; 
+  }
+  footer .col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  footer h4 {
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+  footer p {
+    font-size: 14px;
+    margin: 0 0 8px 0;
+  }
+  footer a {
+    font-size: 12px;
+    text-decoration: none;
+    color: #1a1e57;
+    margin-bottom: 10px;
+    font-weight: 600;
+    transition: .3s ease;
+  }
+  footer a:hover {
+    color: #ff5757;
+  }
+  footer .follow {
+    margin-top: 20px;
+  }
+  footer .follow i {
+    color: #1a1e57;
+    padding-right: 4px;
+    cursor: pointer;
+    transition: .3s ease;
+  }
+  footer .follow i:hover {
+    color: #ff5757;
+  }
+  footer .copyright {
+    width: 100%;
+    text-align: center
+  }
+  footer .copyright p {
+    font-weight: 500;
+    color: #979797;
+  }
+  #mobile {
+    display: none;
+    align-items: center;
+  }
+  #close {
+    display: none;
+  }
+  /* Media queries - Responsive timeline on screens less than 600px wide */
+  @media screen and (max-width: 834px) {
+    /* Place the timelime to the left */
+   #featured .timeline::after {
+    left: 31px;
+    }
+    
+    /* Full-width containers */
+    #featured .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+    }
+    
+    /* Make sure that all arrows are pointing leftwards */
+   #featured  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+    }
+  
+    /* Make sure all circles are at the same spot */
+   #featured .left::after, .right::after {
+    left: 15px;
+    }
+    
+    /* Make all right containers behave like the left ones */
+    #featured .right {
+    left: 0%;
+    }
+
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 0;
+        right: -300px;
+        height: 100vh;
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 40px 60px rgba(0, 0, 0, 0.01);
+        padding: 80px 0 0 10px;
+        transition: 0.3s;    
+    }
+    #navbar li {
+        margin-bottom: 25px;
+    }
+    #mobile {
+        display: flex;
+        align-items: center;
+    }
+    #mobile i {
+        color: #1a1e57;
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    #close {
+        display: initial;
+        position: absolute;
+        top: 30px;
+        left: 30px;
+        color: #1a1e57;
+        font-size: 24px;
+    }
+    #navbar.active {
+        right: 0px;
+    }
+       /* Adjust the spacing of list items in the dropdown */
+       #navbar.active li {
+        margin-bottom: 25px;
+    }
+
+    /* Remove the absolute positioning for sub-menu on smaller screens */
+    #navbar.active li .sub-menu {
+        position: static;
+        top: auto;
+        left: auto;
+        width: 100%;
+        box-shadow: none;
+        z-index: auto;
+    }
+
+    /* Adjust the padding and positioning of sub-menu items */
+    #navbar.active li .sub-menu li {
+        padding: 10px;
+        text-align: center;
+    }
+    #product1 {
+        background-color: #fff;
+        padding: 2px 5px;
+    }
+    #product1 .content img {
+        max-width: 100%;
+        height: 60px;
+        padding: 5px;
+    }
+    #featured .left {
+        left: 0px;
+    }
+    #featured .right::after {
+        left: 15px;
+    }
+    #newsletter {
+       
+        height: 25vh;
+        padding: 0 20px;
+    }
+    #product1 .content {
+        display: flex;
+        flex-direction: column;
+    }
+  
+}
+@media (max-width: 468px) {
+    #hero h1 {
+        font-size: 26px;
+        font-weight: 600;
+    }
+    #hero {
+        padding: 0 40px;
+    }
+     #header  {
+        padding: 5px 20px;
+     }
+     #header img {
+     margin-left: -40px;
+    }
+    #hero p {
+        margin: 10px 0;
+      
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
+       text-align: center;
+        align-items: center;
+    }
+   
+    footer h4 {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+}
+
+  
+
+
